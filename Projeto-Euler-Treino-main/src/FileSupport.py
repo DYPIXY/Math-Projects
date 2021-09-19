@@ -5,19 +5,35 @@ import math
 
 print("Hello",os.getlogin())
 
+#everything outside the ~start function~ just need to be executed one time
+
+#change the current working directory
+
+path = os.path.dirname(__file__)+"/Project_java"   
+os.chdir(path)
+print('')
+
+
 #pre compile the files 
+
 def Compile():
-    position = os.path.dirname(__file__)
-    javac = "javac "+path+"/* -d "+position+"/Project_class/"
-    #javac Project_java/* -d Project_class/
+    altPath = path+"/Project_class"
+    #javac path/Project_java/* -d path/Project_class/
+    javac = "javac "+path+"/* -d "+altPath
     os.system(javac)   
 
+
+#check if the user wants to compile
+
+useCompiled = False
 com = input("Do you want to compile the files? [y/n]:").lower()
 if com == "y":
     Compile()
+    useCompiled = True
+
 
 def start():    
-    #reset the program if input is 
+    #reset the program 
     def reset():
         reset1 = input("want to run it again? [y/n]: ").lower()
         if reset1 == "y":
@@ -31,13 +47,6 @@ def start():
             print("that's not a valid input, please try again")
             reset()
 
-
-    #change the current working directory
-    path = os.path.dirname(__file__)+"/Project_java"   
-    os.chdir(path)
-    print('')
-
-
     #list all files in directory that starts with "Project"
     ListFiles = []
     for fi in os.listdir(path): 
@@ -49,7 +58,7 @@ def start():
     #user input
     def keyboard():
         
-        a = input("Select the number that represents one of the projects you want to run: ")
+        a = input("Select the number that represents one of the projects you want to run: ").lower()
         #shrek 2 
         if a == "shrek2" or a == "Shrek2":
             pathx = os.path.dirname(__file__)
@@ -90,17 +99,18 @@ def start():
     #i desist to do that in other languages because i prefer to do other projects than stuck with just one,
     #and i already know the answer, so i don't think this will be good 
     
-    exectime = time.time()
     print("")
     print("May this take a little bit time, so be patient(but it'll never pass 60 seconds)")
     print("")
+    exectime = time.time()
     os.system(ExecWay)
     print( "Executed in ≅",time.time() - exectime,'seconds')
     print("")
     
+    reset()
+    
     #end of ~start()~
     
-    reset()
 
 #this call the function of ~def start()~ to make all the interactions above     
 start()
