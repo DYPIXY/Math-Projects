@@ -37,15 +37,15 @@ def start():
 
 
     #pre compile the files 
-    def preComp():
+    def Compile():
         position = os.path.dirname(__file__)
-        javac = "javac "+path+" -d "+position+"/Project_class/"
+        javac = "javac "+path+"/* -d "+position+"/Project_class/"
         #javac Project_java/* -d Project_class/
         os.system(javac)   
 
-    com = input("Do you want to pre compile? [y/n]:").lower()
+    com = input("Do you want to compile the files? [y/n]:").lower()
     if com == "y":
-        preComp()
+        Compile()
 
 
     #user input
