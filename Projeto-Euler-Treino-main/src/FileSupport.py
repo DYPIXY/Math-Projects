@@ -5,6 +5,10 @@ import math
 
 print("Hello",os.getlogin())
 
+
+
+
+
 def start():    
     #reset the program if input is 
     def reset():
@@ -81,7 +85,7 @@ def start():
             keyboard()
         a = str(a)
         return a
-    
+
     
     #create a string that will initiate the java Project
     NumOfExec = keyboard() 
