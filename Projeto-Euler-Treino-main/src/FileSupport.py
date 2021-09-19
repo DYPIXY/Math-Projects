@@ -5,9 +5,16 @@ import math
 
 print("Hello",os.getlogin())
 
+#pre compile the files 
+def Compile():
+    position = os.path.dirname(__file__)
+    javac = "javac "+path+"/* -d "+position+"/Project_class/"
+    #javac Project_java/* -d Project_class/
+    os.system(javac)   
 
-
-
+com = input("Do you want to compile the files? [y/n]:").lower()
+if com == "y":
+    Compile()
 
 def start():    
     #reset the program if input is 
@@ -38,19 +45,6 @@ def start():
             ListFiles.append(fi)
     ListFiles.sort()  
     print(ListFiles)
-
-
-    #pre compile the files 
-    def Compile():
-        position = os.path.dirname(__file__)
-        javac = "javac "+path+"/* -d "+position+"/Project_class/"
-        #javac Project_java/* -d Project_class/
-        os.system(javac)   
-
-    com = input("Do you want to compile the files? [y/n]:").lower()
-    if com == "y":
-        Compile()
-
 
     #user input
     def keyboard():
