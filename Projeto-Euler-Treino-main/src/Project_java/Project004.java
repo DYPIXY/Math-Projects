@@ -26,25 +26,29 @@ public class Project004 {
     //new version below
     public static void main(String[] args){
         int biggestPalindrome = 0;
-        for(int a=999;a>99;a--){
-            for(int b=999;b>=a;b--){
+        for(int a = 999;a>99;a--)
+        {
+            for(int b = 999; b>=a; b--)
+            {
                 int x=b*a,y = b*a;
                 int interpreter=0;
-                while(x>0){
+                while(x>0)
+                {
                     interpreter = 10*interpreter + x%10;
                     x/=10;
                 }
-                if(interpreter-y==0){
-                    if(biggestPalindrome<y){
+                if(interpreter-y==0)
+                {
+                    if(biggestPalindrome<y)
+                    {
                         biggestPalindrome=y;
-                    
                     }
                 }
             b--;
             }
         a--;
         }
-    System.out.println("Project004: "+biggestPalindrome);
+    System.out.println(biggestPalindrome);
     }
 }
 
