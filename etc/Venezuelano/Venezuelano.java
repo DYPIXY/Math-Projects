@@ -21,12 +21,25 @@ public class Venezuelano
         Scanner kb = new Scanner(System.in);
         Venezuelano dinero = new Venezuelano();
 
-        System.out.print("Valor em Brasileiros: ");
+        //conversão do dinheiro
+        System.out.print("Valor em reais: ");
         double real = kb.nextDouble();
         bigReal = bigReal.valueOf(real);
-
         num2 = num1.add(dinero.realParaVenezuelano);
         num1 = num2.multiply(bigReal);
+
+
+        System.out.println
+        ("Em notas de:\n[1] 1 milhão \n[2] 200 mil\n[3]\n[4]\n[5]");
+
+
+        //tamanho das notas e a métrica
+        //fonte: https://en.wikipedia.org/wiki/Venezuelan_bol%C3%ADvar
+        //espessura da nota é um valor estimado, sem dados oficiais
+
+
+
+
 
     System.out.println(num1.toString());
     }
