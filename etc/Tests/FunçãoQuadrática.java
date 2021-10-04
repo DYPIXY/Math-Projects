@@ -6,25 +6,31 @@ public class FunçãoQuadrática
 {
 
 
-//teste
-/*
-    static void GUI()
+//test
+    static void Panel()
     {
-        String coluna[] = {"se", "no", "de"};   
+        //incomplete
+        String coluna[] = {"se", "no", "de"};
+        JWindow frame = new JWindow();
         JFrame f;
         
-            f = new JFrame();
-            JTable func= new JTable();
-            func.setBounds(30,40,200,300);
+        f = new JFrame();
+        JTable func= new JTable();
+        func.setBounds(30,40,200,300);
         
-        System.out.println("worked");        
-    
+
+
+
+        System.out.println("worked");
     }
-*/
+
 
     public static void main(String args[])
     {
+        Panel();
 
+
+/*
         int x1, x2;
 
         Scanner scan = new Scanner(System.in);
@@ -98,23 +104,16 @@ public class FunçãoQuadrática
         {
             ponto = "máximo";
         }
-    System.out.println("x1: "+x1);
-    System.out.println("x2: "+x2);
-    System.out.println("delta: "+delta);
-    System.out.println("xv: "+xv);
-    System.out.println("yv: "+yv);
-    System.out.println("ponto: "+ponto);
-    System.out.println("raiz de delta: "+raizDelta);
+        System.out.println("x1: "+x1);
+        System.out.println("x2: "+x2);
+        System.out.println("delta: "+delta);
+        System.out.println("xv: "+xv);
+        System.out.println("yv: "+yv);
+        System.out.println("ponto: "+ponto);
+        System.out.println("raiz de delta: "+raizDelta);
 
-
+    */
     }
 
 }
 
-/*
-public class Graficos()
-{
-
-
-}
-*/
