@@ -1,7 +1,4 @@
-# This is for sorting the files you want, with the names you want
-#
-import os
-import random
+import random, string, os
 
 class fil:
 
@@ -11,7 +8,6 @@ class fil:
         message = ""
         nameOf = ""
         howMuch = int(input("how much files to write?: "))
-
 
         #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt        
         def FilePro():
@@ -33,7 +29,7 @@ class fil:
         try:
             os.mkdir("FilesCreated")
         except OSError:
-            print()
+            print("")
 
         #chose the path to the files directory to create
         PATH = str(os.getcwd()+"/FilesCreated")
@@ -47,28 +43,18 @@ class fil:
             print("")
 
         #"random" names if True, else the input is the name
-        name = input("type 'r' for random files or write any name you want: ")            
-        if name.lower() == "y":
-            randname = True
+        name = input("'r' for files with a random name or type a name: ")            
+        if name.lower() == "r":
+            nameOf = "".join(random.choice(string.ascii_letters) for _ in range(6))
         else:
             nameOf = name
 
-        #"random" numbers in a "random" order, if name is 
-        list = []
-        
-        #consertar isso depois, loop infinito pq o while não muda
-        while len(list) <= howMuch:
-            ran = random.randint(1, howMuch)
-            if ran in list:    
-                continue                
-            else:         
-                #create the files
-                list.append(ran)
-                with open(nameOf+str(ran)+typeOfFile,"w+") as file:
+        #create files, separate name and number with underline
+        for inter in range(howMuch):
+                with open(nameOf + "_" + str(inter) + typeOfFile, "w+") as file:
                     file.write(str(message))
-
-
-
+        
+        file.close()
         print("\n end")
     
     start()
