@@ -1,25 +1,35 @@
-import javax.swing.*;
+import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 import java.util.*;
 import static java.lang.Math.sqrt;
 
-public class FunçãoQuadrática
-{
+public class FunçãoQuadrática extends JComponent {
+    static void Panel(double a, b ,c) {
+
+        int width  = this.getWidth()/2;
+        int Height = this.getHeight()/2;
+
+        Graphics2D g1 = (Graphics2D) g;
+        g1.setStroke(new BasicStroke(2));
+        g1.setColor(Color.black);
+        g1.drawLine(0,h,w*2,h);
+        g1.drawLine(w,0,w,h*2); 
+        g1.drawString("0", w - 7, h + 13);
+
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(2));
+        g2.setColor(Color.red);
 
 
-//test
-    static void Panel()
-    {
-        //incomplete
-        String coluna[] = {"se", "no", "de"};
-        JWindow frame = new JWindow();
-        JFrame f;
-        
-        f = new JFrame();
-        JTable func= new JTable();
-        func.setBounds(30,40,200,300);
-        
-
-
+        JFrame frame = new JFrame(double a b c);
+        frame.setSize(800, 600);
+        frame.setTitle("Gráfico da função [ "+a, b, c +" ]");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);  
+        FunçãoQuadrática draw = new FunçãoQuadrática();
+        frame.add(draw);
+        frame.setVisible(true);
 
         System.out.println("worked");
     }
@@ -27,10 +37,6 @@ public class FunçãoQuadrática
 
     public static void main(String args[])
     {
-        Panel();
-
-
-/*
         int x1, x2;
 
         Scanner scan = new Scanner(System.in);
@@ -72,36 +78,28 @@ public class FunçãoQuadrática
 
 
         //construção da parábola
-        List<Integer> xvalores = new ArrayList<Integer>();
-        List<Double> yvalores = new ArrayList<Double>();
+        Polygon p1 = new Polygon();
         
-        for(int x = -10 ; x<10 ; x++)
+        for(int x = -10 ; x<=10 ; x++)
         {
-            
-            xvalores.add(x);
-            
             //função quadrática para obter o y
-            double y = a*(x*x) + b*x +c;
-            
-            yvalores.add(y);
-
+            double y = a*(x*x) + b*x + c;
+            p1.addPoint(w + x, h - y);
+        
         }
-
-
+        g2.drawPolyline(p1.xpoints, p1.ypoints, p1.npoints); 
+    
         //vértice
         double bb = (double)b;
         double xv = -bb / (a * 2);
         double yv = -delta/(4*a);
 
-
         //ponto máximo ou mínimo
         String ponto;
-        if(a>0)
-        {
+        if(a>0) {
             ponto = "mínimo";
         }
-        else
-        {
+        else {
             ponto = "máximo";
         }
         System.out.println("x1: "+x1);
@@ -112,7 +110,7 @@ public class FunçãoQuadrática
         System.out.println("ponto: "+ponto);
         System.out.println("raiz de delta: "+raizDelta);
 
-    */
+        Panel(a, b ,c);
     }
 
 }
