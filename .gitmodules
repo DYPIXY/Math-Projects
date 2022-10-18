@@ -1,6 +1,3 @@
 [submodule "Sorting-Files"]
 	path = Sorting-Files
 	url = git@github.com:DYPIXY/Sorting-Files.git
-[submodule "FunçãoQuadrática/jfx"]
-	path = FunçãoQuadrática/jfx
-	url = https://github.com/openjdk/jfx.git

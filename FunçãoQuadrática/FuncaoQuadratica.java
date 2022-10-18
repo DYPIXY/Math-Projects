@@ -1,24 +1,18 @@
-import java.awt.*;
-import javafx.application.Application;
-import java.util.*;
 import static java.lang.Math.sqrt;
+import java.util.*;
 
-public class FunçãoQuadrática {
-    static void Panel() {
+public class FuncaoQuadratica {
+    static Map<Integer,Double> points;
 
-    }
-
-    public static void main(String args[])
-    {
-        int x1, x2;
-
+    public static void main() {
+        double x1, x2;
         Scanner scan = new Scanner(System.in);
         //a
         System.out.print("valor de a: ");
         double a = scan.nextDouble();
-        if(a==0)
-        {
+        if(a==0) {
             System.out.println("'a' não pode ser zero");
+            scan.close();
             return;
         }
         //b
@@ -28,10 +22,9 @@ public class FunçãoQuadrática {
         System.out.print("valor de c: ");
         double c = scan.nextDouble();
 
-
+        scan.close();
         //não existe número real como resultado de raiz negativa, então se delta for menor que zero o conjunto solução (x1 e x2) será vazio.
         //delta
-
         double delta = b*b -4*a*c;
         if(delta<0)
         {
@@ -39,24 +32,13 @@ public class FunçãoQuadrática {
             return;
         }
 
-
         //bhaskara
-
         double raizDelta = sqrt(delta);
         double temp1 = a * 2;
         double temp2 = b * -1;
 
-        x1 = (int) ((temp2 + raizDelta) / temp1);
-        x2 = (int) ((temp2 - raizDelta) / temp1);
-
-
-        //construção da parábola
-        Polygon p1 = new Polygon();
-        
-        for(int x = -10 ; x<=10 ; x++)
-        {
-
-        }
+        x1 = ((temp2 - raizDelta) / temp1);
+        x2 = ((temp2 + raizDelta) / temp1);
     
         //vértice
         double bb = (double)b;
@@ -73,14 +55,16 @@ public class FunçãoQuadrática {
         }
         System.out.println("x1: "+x1);
         System.out.println("x2: "+x2);
-        System.out.println("delta: "+delta);
         System.out.println("xv: "+xv);
         System.out.println("yv: "+yv);
         System.out.println("ponto: "+ponto);
+        System.out.println("delta: "+delta);
         System.out.println("raiz de delta: "+raizDelta);
 
-        Panel(a, b ,c);
+        //adicionei essa parte 2 anos depois, lol
+        List<String> formula = new ArrayList<String>();
+        
+        Graph(formula);
     }
-
 }
 
