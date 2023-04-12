@@ -4,7 +4,11 @@ import java.util.*;
 public class FuncaoQuadratica {
     static Map<Integer,Double> points;
 
+<<<<<<< HEAD
     public static void main(String[] args) {
+=======
+    public static void main() {
+>>>>>>> c7d3ddaaa6a8d27d182c959f32f61b25ccac0736
         double x1, x2;
         Scanner scan = new Scanner(System.in);
         //a
@@ -62,8 +66,14 @@ public class FuncaoQuadratica {
         System.out.println("raiz de delta: "+raizDelta);
 
         //adicionei essa parte 2 anos depois, lol
+<<<<<<< HEAD
         Graph graph = new Graph();
         graph.main(args);;
+=======
+        List<String> formula = new ArrayList<String>();
+        
+        Graph(formula);
+>>>>>>> c7d3ddaaa6a8d27d182c959f32f61b25ccac0736
     }
 }
 

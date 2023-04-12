@@ -1,6 +1,9 @@
 [submodule "Sorting-Files"]
 	path = Sorting-Files
 	url = git@github.com:DYPIXY/Sorting-Files.git
+<<<<<<< HEAD
 [submodule "SimpleGraphin-Java"]
 	path = SimpleGraphin-Java
 	url = https://github.com/DYPIXY/Simple-Math-Graphin-Java.git
+=======
+>>>>>>> c7d3ddaaa6a8d27d182c959f32f61b25ccac0736
